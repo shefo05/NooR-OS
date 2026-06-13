@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Nav() {
   const { scrollY } = useScroll();
@@ -51,6 +52,9 @@ export default function Nav() {
               {label}
             </a>
           ))}
+          <Link href="/support" className="hover:text-white transition-colors duration-200">
+            Support
+          </Link>
         </nav>
 
         <a
