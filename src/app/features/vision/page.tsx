@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
+import LightboxImage from "@/components/ui/lightbox-image";
 
 export const metadata: Metadata = {
-  title: "Noor Vision — AI Image Understanding & Visual Intelligence",
+  title: "Noor Vision  AI Image Understanding & Visual Intelligence",
   description:
-    "Noor Vision is an AI image analysis module in Noor OS. Extract text via OCR, identify objects, understand scenes, and ask questions about any image — all locally with no cloud.",
+    "Noor Vision is an AI image analysis module in Noor OS. Extract text via OCR, identify objects, understand scenes, and ask questions about any image  all locally with no cloud.",
   keywords: [
     "AI image analysis desktop",
     "computer vision OS",
@@ -17,8 +17,8 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "https://noor-os.com/features/vision" },
   openGraph: {
-    title: "Noor Vision — AI Image Understanding",
-    description: "Point at any image. Ask what it means. Get an answer — no cloud required.",
+    title: "Noor Vision  AI Image Understanding",
+    description: "Point at any image. Ask what it means. Get an answer  no cloud required.",
     url: "https://noor-os.com/features/vision",
   },
 };
@@ -56,24 +56,24 @@ export default function VisionPage() {
             </h1>
             <p className="text-[#6b8fb5] text-xl leading-relaxed max-w-2xl">
               Noor Vision turns any image into an interactive AI workspace.
-              Screenshots, photographs, diagrams, scanned pages — point at them,
+              Screenshots, photographs, diagrams, scanned pages  point at them,
               ask questions, extract text. All processing happens on your device.
             </p>
           </header>
 
           <div className="screen-frame mb-16 gradient-fade-bottom">
-            <Image src="/screenshots/vision/ss13-architecture.png" alt="Noor Vision — AI image intelligence interface" width={1200} height={800} className="w-full h-auto" priority />
+            <LightboxImage src="/screenshots/vision/ss13-architecture.png" alt="Noor Vision  AI image intelligence interface" width={1200} height={800} className="w-full h-auto" priority />
           </div>
 
           <section className="mb-16 p-8 rounded-2xl border border-[rgba(0,200,255,0.12)] bg-[rgba(0,200,255,0.03)]">
             <h2 className="text-2xl font-bold text-white mb-4">What is Noor Vision?</h2>
             <p className="text-[#6b8fb5] leading-relaxed mb-4">
               <strong className="text-white">Noor Vision</strong> is the visual intelligence module of Noor OS.
-              It applies computer vision and AI to images at the operating system level — making any visual content
+              It applies computer vision and AI to images at the operating system level  making any visual content
               queryable, searchable, and understandable through natural language.
             </p>
             <p className="text-[#6b8fb5] leading-relaxed">
-              Traditional operating systems treat images as opaque files. Noor Vision makes them transparent —
+              Traditional operating systems treat images as opaque files. Noor Vision makes them transparent 
               you can ask what is in a screenshot, extract text from a scanned document,
               identify objects in a photo, or understand a diagram, all without uploading anything to the cloud.
             </p>
@@ -83,7 +83,7 @@ export default function VisionPage() {
             <h2 className="text-3xl font-bold text-white mb-8">Capabilities</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
-                { title: "Visual OCR", desc: "Extract text from any image — printed, handwritten, screenshots, or scanned pages — with high accuracy." },
+                { title: "Visual OCR", desc: "Extract text from any image  printed, handwritten, screenshots, or scanned pages  with high accuracy." },
                 { title: "Object Recognition", desc: "Identify objects, people, places, and elements within any image using local AI models." },
                 { title: "Scene Understanding", desc: "Describe and analyze complex scenes, diagrams, charts, and photographs in natural language." },
                 { title: "Visual Q&A", desc: "Ask any question about image content and receive detailed, accurate answers on-device." },

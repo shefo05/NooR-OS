@@ -16,7 +16,7 @@ const eras = [
     label: "1984",
     name: "Graphical UI",
     icon: "⊞",
-    desc: "Windows, menus, icons. Easier — but still hierarchical and manual.",
+    desc: "Windows, menus, icons. Easier  but still hierarchical and manual.",
     pain: "Humans still navigate menus to find actions",
   },
   {
@@ -34,7 +34,7 @@ export default function ProblemSection() {
 
   return (
     <section ref={ref} className="relative py-32 overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_60%,rgba(80,0,60,0.08),transparent)]" />
+      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_70%_50%_at_50%_60%,rgba(80,0,60,0.08),transparent)]" />
 
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-20">
@@ -82,7 +82,7 @@ export default function ProblemSection() {
         <FadeIn delay={0.3}>
           <div className="max-w-3xl mx-auto text-center py-12 px-8 rounded-3xl border border-[rgba(0,200,255,0.08)] bg-[rgba(0,200,255,0.02)] relative overflow-hidden">
             <motion.div
-              className="absolute inset-0 rounded-3xl"
+              className="absolute inset-0 rounded-3xl pointer-events-none"
               animate={inView ? { opacity: [0, 0.5, 0] } : {}}
               transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
               style={{

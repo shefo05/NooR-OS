@@ -56,7 +56,7 @@ export default function RoadmapSection() {
 
   return (
     <section id="roadmap" ref={ref} className="relative py-32 overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_40%,rgba(0,50,120,0.08),transparent)]" />
+      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_70%_50%_at_50%_40%,rgba(0,50,120,0.08),transparent)]" />
 
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">

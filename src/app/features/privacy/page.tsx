@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
+import LightboxImage from "@/components/ui/lightbox-image";
 
 export const metadata: Metadata = {
-  title: "Privacy Architecture — Local AI, Zero Cloud",
+  title: "Privacy Architecture  Local AI, Zero Cloud",
   description:
     "Noor OS is a privacy-first AI operating system. All AI models run locally via Ollama. No data is sent to external servers. Human-in-the-loop security for sensitive operations.",
   keywords: [
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "https://noor-os.com/features/privacy" },
   openGraph: {
-    title: "Noor OS Privacy — Local AI, Zero Cloud",
+    title: "Noor OS Privacy  Local AI, Zero Cloud",
     description: "Your data never leaves your machine. Privacy is the architecture, not a toggle.",
     url: "https://noor-os.com/features/privacy",
   },
@@ -63,7 +63,7 @@ export default function PrivacyPage() {
           </header>
 
           <div className="screen-frame mb-16">
-            <Image src="/screenshots/privacy/ss26-privacy-shield.png" alt="Noor OS privacy architecture — local AI zero cloud" width={1200} height={700} className="w-full h-auto" priority />
+            <LightboxImage src="/screenshots/privacy/ss26-privacy-shield.png" alt="Noor OS privacy architecture  local AI zero cloud" width={1200} height={700} className="w-full h-auto" priority />
           </div>
 
           <section className="mb-16 p-8 rounded-2xl border border-[rgba(0,200,255,0.12)] bg-[rgba(0,200,255,0.03)]">
@@ -74,14 +74,14 @@ export default function PrivacyPage() {
               remote infrastructure. This creates irreversible privacy risks.
             </p>
             <p className="text-[#6b8fb5] leading-relaxed">
-              <strong className="text-white">Noor OS takes the opposite approach.</strong> All AI models —
+              <strong className="text-white">Noor OS takes the opposite approach.</strong> All AI models 
               Qwen for language understanding, Whisper for speech, OCR for text extraction, computer vision
-              for images — run entirely on your hardware via Ollama. The operating system has no cloud
+              for images  run entirely on your hardware via Ollama. The operating system has no cloud
               dependency for its AI capabilities.
             </p>
           </section>
 
-          {/* Comparison table — GEO optimized */}
+          {/* Comparison table  GEO optimized */}
           <section className="mb-16">
             <h2 className="text-3xl font-bold text-white mb-8">Noor OS vs. cloud AI systems</h2>
             <div className="overflow-x-auto">
@@ -96,9 +96,9 @@ export default function PrivacyPage() {
                 <tbody>
                   {[
                     ["Data sent to servers", "Never", "Always"],
-                    ["Works offline", "Yes — fully", "No"],
-                    ["Documents processed locally", "Yes", "No — uploaded to cloud"],
-                    ["Audio/video processed locally", "Yes", "No — uploaded to cloud"],
+                    ["Works offline", "Yes  fully", "No"],
+                    ["Documents processed locally", "Yes", "No  uploaded to cloud"],
+                    ["Audio/video processed locally", "Yes", "No  uploaded to cloud"],
                     ["Human approval for sensitive ops", "Yes", "Varies"],
                     ["Internet required for AI", "No", "Yes"],
                   ].map(([feature, noor, cloud]) => (
@@ -122,7 +122,7 @@ export default function PrivacyPage() {
               ].map(({ src, label }) => (
                 <div key={label} className="flex flex-col gap-2">
                   <div className="screen-frame">
-                    <Image src={src} alt={`Noor OS privacy — ${label}`} width={800} height={500} className="w-full h-auto" />
+                    <LightboxImage src={src} alt={`Noor OS privacy  ${label}`} width={800} height={500} className="w-full h-auto" />
                   </div>
                   <p className="text-[#6b8fb5] text-xs">{label}</p>
                 </div>

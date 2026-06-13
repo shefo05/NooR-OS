@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://noor-os.com"),
   title: {
-    default: "Noor OS — The First AI-Native Operating System",
+    default: "Noor OS",
     template: "%s | Noor OS",
   },
   description:
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   publisher: "Noor OS",
   category: "Technology",
   openGraph: {
-    title: "Noor OS — The First AI-Native Operating System",
+    title: "Noor OS",
     description:
       "Built for a world where humans express intent and computers handle execution. A platform-independent OS experience powered by local AI.",
     type: "website",
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Noor OS — The First AI-Native Operating System",
+    title: "Noor OS",
     description:
       "Built for a world where humans express intent and computers handle execution.",
     creator: "@noor_os",
@@ -113,14 +113,14 @@ const jsonLd = {
         availability: "https://schema.org/PreOrder",
       },
       featureList: [
-        "AI Bar — intent-driven OS interface",
+        "AI Bar - intent-driven OS interface",
         "Local AI execution via Ollama and Qwen",
         "Offline AI operation",
-        "Privacy-first architecture — no cloud data transfer",
+        "Privacy-first architecture - no cloud data transfer",
         "Arabic language AI support",
-        "Noor Reader — AI PDF workspace",
-        "Noor Vision — AI image analysis",
-        "Noor Media — AI audio and video intelligence",
+        "Noor Reader - AI PDF workspace",
+        "Noor Vision - AI image analysis",
+        "Noor Media - AI audio and video intelligence",
         "Autonomous AI agent loop",
         "Mobile companion app",
       ],
@@ -172,7 +172,7 @@ const jsonLd = {
           name: "Does Noor OS work offline?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Yes. Noor OS runs all AI models locally using Ollama and Qwen. No data is sent to external servers. All AI processing — including natural language understanding, document analysis, image recognition, and audio transcription — happens entirely on your device.",
+            text: "Yes. Noor OS runs all AI models locally using Ollama and Qwen. No data is sent to external servers. All AI processing - including natural language understanding, document analysis, image recognition, and audio transcription - happens entirely on your device.",
           },
         },
         {

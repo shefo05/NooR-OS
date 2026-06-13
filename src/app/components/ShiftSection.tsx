@@ -20,7 +20,7 @@ const timeline = [
   {
     year: "2007",
     label: "Mobile",
-    desc: "Touch computing. Apps for everything — siloed and fragmented.",
+    desc: "Touch computing. Apps for everything  siloed and fragmented.",
     status: "past",
   },
   {
@@ -39,7 +39,7 @@ export default function ShiftSection() {
 
   return (
     <section ref={ref} className="relative py-32 overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_50%,rgba(0,60,140,0.1),transparent)]" />
+      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_80%_50%_at_50%_50%,rgba(0,60,140,0.1),transparent)]" />
 
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-20">
@@ -91,7 +91,7 @@ export default function ShiftSection() {
                 >
                   {status === "now" && (
                     <motion.div
-                      className="absolute inset-0 rounded-full border border-[rgba(0,200,255,0.4)]"
+                      className="absolute inset-0 rounded-full border border-[rgba(0,200,255,0.4)] pointer-events-none"
                       animate={{ scale: [1, 1.8, 1], opacity: [0.8, 0, 0.8] }}
                       transition={{ duration: 2, repeat: Infinity }}
                     />

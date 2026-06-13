@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
-import Image from "next/image";
+import LightboxImage from "@/components/ui/lightbox-image";
 import { useRef } from "react";
 import FadeIn from "./FadeIn";
 
@@ -18,12 +18,12 @@ export default function MobileSection() {
 
   return (
     <section id="mobile" className="relative py-32 overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_60%,rgba(0,50,120,0.1),transparent)]" />
+      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_70%_50%_at_50%_60%,rgba(0,50,120,0.1),transparent)]" />
 
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
-          {/* Phone gallery — fixed sizing, no FadeIn wrappers */}
+          {/* Phone gallery  fixed sizing, no FadeIn wrappers */}
           <div ref={galleryRef}>
             <div className="flex items-end justify-center gap-3 sm:gap-4">
               {phones.map(({ src, label }, i) => (
@@ -39,7 +39,7 @@ export default function MobileSection() {
                   style={{ width: "calc(25% - 12px)" }}
                 >
                   <div className="phone-frame w-full">
-                    <Image
+                    <LightboxImage
                       src={src}
                       alt={`Noor Mobile - ${label}`}
                       width={375}
@@ -60,7 +60,7 @@ export default function MobileSection() {
               className="mt-8 flex justify-center"
             >
               <div className="screen-frame w-[576px]">
-                <Image
+                <LightboxImage
                   src="/screenshots/mobile/ss33-pair-qr.png"
                   alt="Pair with QR code"
                   width={600}
@@ -86,7 +86,7 @@ export default function MobileSection() {
             <FadeIn delay={0.2}>
               <p className="text-[#6b8fb5] text-lg leading-relaxed mb-8">
                 The Noor mobile companion pairs with your Noor OS system seamlessly.
-                Control your desktop, run AI commands, and mirror your screen —
+                Control your desktop, run AI commands, and mirror your screen 
                 all from your phone.
               </p>
             </FadeIn>

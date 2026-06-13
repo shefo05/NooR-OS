@@ -8,12 +8,12 @@ export default function CTASection() {
   return (
     <section id="download" className="relative py-40 overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_50%,rgba(0,80,180,0.18),transparent)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_40%_30%_at_50%_50%,rgba(0,200,255,0.06),transparent)]" />
+      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_80%_60%_at_50%_50%,rgba(0,80,180,0.18),transparent)]" />
+      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_40%_30%_at_50%_50%,rgba(0,200,255,0.06),transparent)]" />
 
       {/* Grid lines */}
       <div
-        className="absolute inset-0 opacity-5"
+        className="absolute inset-0 opacity-5 pointer-events-none"
         style={{
           backgroundImage: `linear-gradient(rgba(0,200,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(0,200,255,0.5) 1px, transparent 1px)`,
           backgroundSize: "60px 60px",
@@ -48,7 +48,7 @@ export default function CTASection() {
 
         <FadeIn delay={0.2}>
           <p className="text-[#6b8fb5] text-lg leading-relaxed mb-12 max-w-xl mx-auto">
-            The future of computing is intent-driven. Smart, private, fast —
+            The future of computing is intent-driven. Smart, private, fast 
             and fully fluent in Arabic. Be among the first to experience it.
           </p>
         </FadeIn>

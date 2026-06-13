@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
-import Image from "next/image";
+import LightboxImage from "@/components/ui/lightbox-image";
 import { useRef } from "react";
 import FadeIn from "./FadeIn";
 
@@ -18,7 +18,7 @@ export default function ReaderSection() {
 
   return (
     <section id="reader" ref={ref} className="relative py-32 overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_80%_50%,rgba(0,50,120,0.1),transparent)]" />
+      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_60%_40%_at_80%_50%,rgba(0,50,120,0.1),transparent)]" />
 
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
@@ -35,7 +35,7 @@ export default function ReaderSection() {
           <FadeIn delay={0.2}>
             <p className="max-w-lg mx-auto text-[#6b8fb5] text-lg leading-relaxed">
               Open any PDF and have a conversation with it. Ask questions,
-              get summaries, create quizzes — all powered by AI.
+              get summaries, create quizzes  all powered by AI.
             </p>
           </FadeIn>
         </div>
@@ -50,7 +50,7 @@ export default function ReaderSection() {
                 className="flex flex-col gap-4 group cursor-default"
               >
                 <div className="screen-frame overflow-hidden group-hover:border-[rgba(0,200,255,0.3)] transition-colors duration-300">
-                  <Image
+                  <LightboxImage
                     src={src}
                     alt={`Noor Reader - ${label}`}
                     width={600}
@@ -67,10 +67,10 @@ export default function ReaderSection() {
           ))}
         </div>
 
-        {/* Big reader screenshot */}
+        {/* Big reader screenshot
         <FadeIn delay={0.2} className="mt-16">
           <div className="screen-frame">
-            <Image
+            <LightboxImage
               src="/screenshots/media/ss22-summary.png"
               alt="Noor Reader - document summary"
               width={1600}
@@ -78,7 +78,7 @@ export default function ReaderSection() {
               className="w-full h-auto"
             />
           </div>
-        </FadeIn>
+        </FadeIn> */}
       </div>
     </section>
   );

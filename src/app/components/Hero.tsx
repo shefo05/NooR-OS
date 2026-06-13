@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
+import LightboxImage from "@/components/ui/lightbox-image";
 import { useEffect, useRef, useState } from "react";
 
 interface Star {
@@ -39,12 +40,12 @@ export default function Hero() {
   return (
     <section ref={ref} className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-[#050d1a]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(0,100,200,0.18),transparent)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_40%_40%_at_50%_50%,rgba(0,200,255,0.04),transparent)]" />
+      <div className="absolute inset-0 pointer-events-none bg-[#050d1a]" />
+      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(0,100,200,0.18),transparent)]" />
+      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_40%_40%_at_50%_50%,rgba(0,200,255,0.04),transparent)]" />
 
-      {/* Star field — client-only to avoid hydration mismatch */}
-      <div className="absolute inset-0 overflow-hidden">
+      {/* Star field  client-only to avoid hydration mismatch */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {stars.map((star, i) => (
           <motion.div
             key={i}
@@ -82,7 +83,7 @@ export default function Hero() {
             />
           </div>
           <motion.div
-            className="absolute inset-0 rounded-full"
+            className="absolute inset-0 rounded-full pointer-events-none"
             style={{
               background: "radial-gradient(circle, rgba(0,200,255,0.15) 0%, transparent 70%)",
             }}
@@ -182,7 +183,7 @@ export default function Hero() {
         className="relative z-10 w-full max-w-5xl mx-auto px-6"
       >
         <div className="screen-frame gradient-fade-bottom">
-          <Image
+          <LightboxImage
             src="/screenshots/hero/ss03-aibar-overlay.png"
             alt="Noor AI Bar overlay on desktop"
             width={1920}

@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
+import LightboxImage from "@/components/ui/lightbox-image";
 
 export const metadata: Metadata = {
-  title: "AI Bar — Intent-Driven OS Interface",
+  title: "AI Bar  Intent-Driven OS Interface",
   description:
     "Noor AI Bar is a system-wide AI command interface. One keystroke summons an AI assistant that understands natural language and executes OS commands, opens apps, manages files, and runs workflows.",
   keywords: [
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "https://noor-os.com/features/aibar" },
   openGraph: {
-    title: "Noor AI Bar — Intent-Driven OS Interface",
+    title: "Noor AI Bar  Intent-Driven OS Interface",
     description: "One keystroke. Natural language. Your entire OS at your command.",
     url: "https://noor-os.com/features/aibar",
   },
@@ -76,17 +76,17 @@ export default function AIBarPage() {
             </h1>
             <p className="text-[#6b8fb5] text-xl leading-relaxed max-w-2xl">
               The Noor AI Bar is a system-wide intent interface. Press a key.
-              Type what you want. Your operating system does the rest — no menus,
+              Type what you want. Your operating system does the rest  no menus,
               no file paths, no memorized commands.
             </p>
           </header>
 
           {/* Main screenshot */}
           <div className="screen-frame mb-16">
-            <Image src="/screenshots/aibar/ss03-suggestions.png" alt="Noor AI Bar showing intent suggestions" width={1200} height={700} className="w-full h-auto" priority />
+            <LightboxImage src="/screenshots/aibar/ss03-suggestions.png" alt="Noor AI Bar showing intent suggestions" width={1200} height={700} className="w-full h-auto" priority />
           </div>
 
-          {/* Definition block — GEO optimized */}
+          {/* Definition block  GEO optimized */}
           <section className="mb-16 p-8 rounded-2xl border border-[rgba(0,200,255,0.12)] bg-[rgba(0,200,255,0.03)]">
             <h2 className="text-2xl font-bold text-white mb-4">What is the Noor AI Bar?</h2>
             <p className="text-[#6b8fb5] leading-relaxed mb-4">
@@ -98,7 +98,7 @@ export default function AIBarPage() {
               Unlike traditional OS launchers, the AI Bar understands <em>context</em> and <em>intent</em>.
               Saying &ldquo;find the project report from last week&rdquo; locates and opens the file.
               Saying &ldquo;check if the server is running&rdquo; executes the appropriate system command.
-              All AI processing happens locally — nothing leaves the device.
+              All AI processing happens locally  nothing leaves the device.
             </p>
           </section>
 
@@ -109,11 +109,11 @@ export default function AIBarPage() {
               {[
                 { src: "/screenshots/aibar/ss06-welcome.png", step: "1. Invoke", desc: "One hotkey summons the AI Bar from anywhere on the OS" },
                 { src: "/screenshots/aibar/ss07-executing.png", step: "2. Execute", desc: "Type your intent. Watch the AI understand and act in real time" },
-                { src: "/screenshots/aibar/ss08-result.png", step: "3. Result", desc: "Instant output. Task completed — without touching a single menu" },
+                { src: "/screenshots/aibar/ss08-result.png", step: "3. Result", desc: "Instant output. Task completed  without touching a single menu" },
               ].map(({ src, step, desc }) => (
                 <div key={step} className="flex flex-col gap-3">
                   <div className="screen-frame">
-                    <Image src={src} alt={`Noor AI Bar — ${step}`} width={600} height={380} className="w-full h-auto" />
+                    <LightboxImage src={src} alt={`Noor AI Bar  ${step}`} width={600} height={380} className="w-full h-auto" />
                   </div>
                   <p className="text-white text-sm font-semibold">{step}</p>
                   <p className="text-[#6b8fb5] text-xs leading-relaxed">{desc}</p>

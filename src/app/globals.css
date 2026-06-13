@@ -63,6 +63,8 @@ body {
 
 /* Screen frame */
 .screen-frame {
+  position: relative;
+  z-index: 2;
   background: #0a1628;
   border: 1px solid rgba(0, 200, 255, 0.15);
   border-radius: 12px;
@@ -74,6 +76,8 @@ body {
 }
 
 .phone-frame {
+  position: relative;
+  z-index: 2;
   background: #111827;
   border: 2px solid rgba(255, 255, 255, 0.1);
   border-radius: 40px;

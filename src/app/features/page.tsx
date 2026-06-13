@@ -3,12 +3,12 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Features — AI-Native OS Capabilities",
+  title: "Features  AI-Native OS Capabilities",
   description:
     "Explore Noor OS features: AIBar intent interface, PDF Reader AI, Vision image intelligence, Media transcription, privacy-first local AI, and native Arabic support.",
   alternates: { canonical: "https://noor-os.com/features" },
   openGraph: {
-    title: "Noor OS Features — AI-Native Operating System Capabilities",
+    title: "Noor OS Features  AI-Native Operating System Capabilities",
     description:
       "Every Noor OS feature is built around one principle: humans express intent, the OS executes.",
     url: "https://noor-os.com/features",
@@ -20,7 +20,7 @@ const features = [
     slug: "aibar",
     name: "AI Bar",
     tagline: "Intent-Driven OS Interface",
-    desc: "A system-wide AI interface accessible with one keystroke. Type anything in natural language — Noor OS understands and executes.",
+    desc: "A system-wide AI interface accessible with one keystroke. Type anything in natural language  Noor OS understands and executes.",
     img: "/screenshots/aibar/ss03-suggestions.png",
     keyword: "AI command interface",
   },
@@ -28,7 +28,7 @@ const features = [
     slug: "reader",
     name: "Noor Reader",
     tagline: "AI PDF & Document Intelligence",
-    desc: "Open any PDF and have a conversation with it. Ask questions, get summaries, extract knowledge — powered by local AI.",
+    desc: "Open any PDF and have a conversation with it. Ask questions, get summaries, extract knowledge  powered by local AI.",
     img: "/screenshots/reader/ss14-ask.png",
     keyword: "AI document analysis",
   },
@@ -36,7 +36,7 @@ const features = [
     slug: "vision",
     name: "Noor Vision",
     tagline: "AI Image Understanding",
-    desc: "Point at any image, screenshot, or scan. Ask what it contains. Get an answer — entirely on-device, no cloud required.",
+    desc: "Point at any image, screenshot, or scan. Ask what it contains. Get an answer  entirely on-device, no cloud required.",
     img: "/screenshots/vision/ss13-architecture.png",
     keyword: "AI image analysis",
   },
@@ -51,8 +51,8 @@ const features = [
   {
     slug: "privacy",
     name: "Privacy Architecture",
-    tagline: "Local AI — Zero Cloud",
-    desc: "Every AI operation runs on your device. No data leaves your machine. Privacy is not a setting — it is the architecture.",
+    tagline: "Local AI  Zero Cloud",
+    desc: "Every AI operation runs on your device. No data leaves your machine. Privacy is not a setting  it is the architecture.",
     img: "/screenshots/privacy/ss26-privacy-shield.png",
     keyword: "local AI privacy",
   },
@@ -60,7 +60,7 @@ const features = [
     slug: "arabic",
     name: "Arabic First",
     tagline: "Arabic-Native AI Computing",
-    desc: "Arabic is not a language pack. It is a first-class language in every module — AI conversations, OCR, RTL interfaces, and document analysis.",
+    desc: "Arabic is not a language pack. It is a first-class language in every module  AI conversations, OCR, RTL interfaces, and document analysis.",
     img: "/screenshots/arabic/ss32-chat-arabic.png",
     keyword: "Arabic AI operating system",
   },
@@ -99,7 +99,7 @@ export default function FeaturesPage() {
               <span className="text-[#00c8ff]">One intention.</span>
             </h1>
             <p className="max-w-xl mx-auto text-[#6b8fb5] text-lg leading-relaxed">
-              Noor OS features are not isolated tools — they are a unified AI-native
+              Noor OS features are not isolated tools  they are a unified AI-native
               computing platform built around a single principle: express intent, get results.
             </p>
           </div>
@@ -109,7 +109,7 @@ export default function FeaturesPage() {
               <Link key={slug} href={`/features/${slug}`} className="group block">
                 <article className="h-full rounded-2xl border border-[rgba(0,200,255,0.1)] bg-[rgba(10,22,40,0.5)] overflow-hidden hover:border-[rgba(0,200,255,0.3)] transition-all duration-300 hover:-translate-y-1">
                   <div className="screen-frame rounded-none border-0 border-b border-[rgba(0,200,255,0.08)]">
-                    <Image src={img} alt={`${name} — ${keyword}`} width={800} height={500} className="w-full h-48 object-cover object-top" />
+                    <Image src={img} alt={`${name}  ${keyword}`} width={800} height={500} className="w-full h-48 object-cover object-top" />
                   </div>
                   <div className="p-6">
                     <span className="text-xs text-[#00c8ff] font-medium uppercase tracking-widest">{tagline}</span>

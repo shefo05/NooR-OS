@@ -1,13 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
+import LightboxImage from "@/components/ui/lightbox-image";
 import FadeIn from "./FadeIn";
 
 export default function AgentSection() {
   return (
     <section className="relative py-32 overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_40%_at_50%_30%,rgba(0,80,180,0.1),transparent)]" />
+      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_50%_40%_at_50%_30%,rgba(0,80,180,0.1),transparent)]" />
 
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
@@ -16,14 +16,14 @@ export default function AgentSection() {
           </FadeIn>
           <FadeIn delay={0.1}>
             <h2 className="text-4xl sm:text-5xl font-bold text-white mb-5">
-              Not just answers —
+              Not just answers 
               <br />
               <span className="text-[#00c8ff]">real actions.</span>
             </h2>
           </FadeIn>
           <FadeIn delay={0.2}>
             <p className="max-w-lg mx-auto text-[#6b8fb5] text-lg leading-relaxed">
-              Noor Agent doesn&apos;t just respond — it acts. Launch apps,
+              Noor Agent doesn&apos;t just respond  it acts. Launch apps,
               run commands, search files, control your system. All from one prompt.
             </p>
           </FadeIn>
@@ -32,7 +32,7 @@ export default function AgentSection() {
         {/* Agent welcome big screenshot */}
         <FadeIn delay={0.15}>
           <div className="screen-frame max-w-3xl mx-auto mb-12">
-            <Image
+            <LightboxImage
               src="/screenshots/hero/ss06-agent-welcome.png"
               alt="Noor Agent ready"
               width={1200}
@@ -47,7 +47,7 @@ export default function AgentSection() {
           {[
             {
               title: "System Commands",
-              desc: "Check RAM, CPU, storage, running processes, network status — just ask.",
+              desc: "Check RAM, CPU, storage, running processes, network status  just ask.",
               icon: "⚙️",
             },
             {
@@ -72,7 +72,7 @@ export default function AgentSection() {
             },
             {
               title: "Multi-step Tasks",
-              desc: "Chain complex workflows — Noor handles each step autonomously.",
+              desc: "Chain complex workflows  Noor handles each step autonomously.",
               icon: "⚡",
             },
           ].map(({ title, desc, icon }, i) => (

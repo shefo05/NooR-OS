@@ -1,13 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
+import LightboxImage from "@/components/ui/lightbox-image";
 import FadeIn from "./FadeIn";
 
 export default function ArabicSection() {
   return (
     <section id="arabic" className="relative py-32 overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_70%_50%,rgba(0,60,130,0.1),transparent)]" />
+      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_60%_40%_at_70%_50%,rgba(0,60,130,0.1),transparent)]" />
 
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -39,7 +39,7 @@ export default function ArabicSection() {
             <div className="flex flex-col gap-4">
               {[
                 { title: "RTL Layout", desc: "Full right-to-left interface throughout the OS" },
-                { title: "Arabic AI Bar", desc: "Type commands in Arabic — Noor executes natively" },
+                { title: "Arabic AI Bar", desc: "Type commands in Arabic  Noor executes natively" },
                 { title: "Arabic Browser", desc: "Noor Browser with Arabic-first homepage" },
                 { title: "Arabic Chat", desc: "Conversational AI in fluent Arabic" },
               ].map(({ title, desc }, i) => (
@@ -64,7 +64,7 @@ export default function ArabicSection() {
           <div className="flex flex-col gap-4">
             <FadeIn delay={0.1} direction="right">
               <div className="screen-frame">
-                <Image
+                <LightboxImage
                   src="/screenshots/arabic/ss05-aibar-arabic.png"
                   alt="Noor AI Bar in Arabic"
                   width={900}
@@ -76,7 +76,7 @@ export default function ArabicSection() {
             <div className="grid grid-cols-2 gap-4">
               <FadeIn delay={0.2} direction="right">
                 <div className="screen-frame">
-                  <Image
+                  <LightboxImage
                     src="/screenshots/arabic/ss28-browser-arabic.png"
                     alt="Noor Browser in Arabic"
                     width={450}
@@ -87,7 +87,7 @@ export default function ArabicSection() {
               </FadeIn>
               <FadeIn delay={0.3} direction="right">
                 <div className="screen-frame">
-                  <Image
+                  <LightboxImage
                     src="/screenshots/arabic/ss32-chat-arabic.png"
                     alt="Noor Chat in Arabic"
                     width={450}
@@ -99,7 +99,7 @@ export default function ArabicSection() {
             </div>
             <FadeIn delay={0.35} direction="right">
               <div className="screen-frame">
-                <Image
+                <LightboxImage
                   src="/screenshots/arabic/ss25-browser-home.png"
                   alt="Noor Browser home in Arabic"
                   width={900}

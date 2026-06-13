@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
+import LightboxImage from "@/components/ui/lightbox-image";
 
 export const metadata: Metadata = {
-  title: "Noor Media — AI Audio & Video Intelligence",
+  title: "Noor Media  AI Audio & Video Intelligence",
   description:
     "Noor Media transcribes, summarizes, and semantically searches audio and video files using Whisper and local AI. Offline speech recognition for any language including Arabic.",
   keywords: [
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "https://noor-os.com/features/media" },
   openGraph: {
-    title: "Noor Media — AI Audio & Video Intelligence",
+    title: "Noor Media  AI Audio & Video Intelligence",
     description: "Transcribe, summarize, and search any audio or video file with local AI.",
     url: "https://noor-os.com/features/media",
   },
@@ -58,19 +58,19 @@ export default function MediaPage() {
             <p className="text-[#6b8fb5] text-xl leading-relaxed max-w-2xl">
               Noor Media applies AI to audio and video files at the OS level.
               Transcribe recordings, generate summaries, and semantically search
-              spoken content — all using Whisper and local AI models, entirely offline.
+              spoken content  all using Whisper and local AI models, entirely offline.
             </p>
           </header>
 
           <div className="screen-frame mb-16">
-            <Image src="/screenshots/media/ss21-transcript.png" alt="Noor Media — AI audio transcription" width={1200} height={700} className="w-full h-auto" priority />
+            <LightboxImage src="/screenshots/media/ss21-transcript.png" alt="Noor Media  AI audio transcription" width={1200} height={700} className="w-full h-auto" priority />
           </div>
 
           <section className="mb-16 p-8 rounded-2xl border border-[rgba(0,200,255,0.12)] bg-[rgba(0,200,255,0.03)]">
             <h2 className="text-2xl font-bold text-white mb-4">What is Noor Media?</h2>
             <p className="text-[#6b8fb5] leading-relaxed mb-4">
               <strong className="text-white">Noor Media</strong> is the audio and video intelligence module of Noor OS.
-              It uses OpenAI Whisper — running entirely locally — to transcribe any audio or video file
+              It uses OpenAI Whisper  running entirely locally  to transcribe any audio or video file
               with high accuracy across multiple languages including Arabic.
             </p>
             <p className="text-[#6b8fb5] leading-relaxed">
@@ -91,7 +91,7 @@ export default function MediaPage() {
               ].map(({ src, label }) => (
                 <div key={label} className="flex flex-col gap-2">
                   <div className="screen-frame">
-                    <Image src={src} alt={`Noor Media — ${label}`} width={800} height={500} className="w-full h-auto" />
+                    <LightboxImage src={src} alt={`Noor Media  ${label}`} width={800} height={500} className="w-full h-auto" />
                   </div>
                   <p className="text-[#6b8fb5] text-xs">{label}</p>
                 </div>
@@ -105,7 +105,7 @@ export default function MediaPage() {
               {[
                 { title: "Whisper Transcription", desc: "High-accuracy offline speech-to-text powered by Whisper, supporting 100+ languages." },
                 { title: "AI Summary", desc: "Convert any recording into a structured summary with key points and action items." },
-                { title: "Semantic Search", desc: "Search spoken content by meaning — find any moment in any recording with a sentence." },
+                { title: "Semantic Search", desc: "Search spoken content by meaning  find any moment in any recording with a sentence." },
                 { title: "Chat With Media", desc: "Ask questions about the content of any audio or video file in natural language." },
                 { title: "Arabic Transcription", desc: "Native Arabic speech recognition and analysis with high accuracy for Arabic speakers." },
                 { title: "Fully Offline", desc: "All transcription and AI analysis runs on-device. No audio is ever uploaded to cloud services." },

@@ -299,10 +299,10 @@ export async function sendTicketConfirmationToUser(data: SendSupportTicketReques
 }
 
 export async function sendSupportTicket(data: SendSupportTicketRequest): Promise<void> {
-  // Admin email must succeed — if it fails the ticket is not complete.
+  // Admin email must succeed  if it fails the ticket is not complete.
   await sendSupportNotificationToAdmin(data);
 
-  // User confirmation is best-effort — log failures but do not surface them.
+  // User confirmation is best-effort  log failures but do not surface them.
   try {
     await sendTicketConfirmationToUser(data);
   } catch (err) {

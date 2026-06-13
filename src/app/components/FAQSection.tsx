@@ -7,7 +7,7 @@ import FadeIn from "./FadeIn";
 const faqs = [
   {
     q: "What is Noor OS?",
-    a: "Noor OS is the first AI-native operating system — a platform-independent computing experience where AI serves as the primary interface. Instead of navigating menus and memorizing commands, users express intent in natural language and Noor OS executes.",
+    a: "Noor OS is the first AI-native operating system - a platform-independent computing experience where AI serves as the primary interface. Instead of navigating menus and memorizing commands, users express intent in natural language and Noor OS executes.",
   },
   {
     q: "What is intent-driven computing?",
@@ -15,7 +15,7 @@ const faqs = [
   },
   {
     q: "Does Noor OS work offline?",
-    a: "Yes — entirely. All AI models (Qwen, Whisper, OCR, Vision) run locally via Ollama. No data is sent to external servers. Every interaction — language, documents, images, audio — is processed on-device.",
+    a: "Yes - entirely. All AI models (Qwen, Whisper, OCR, Vision) run locally via Ollama. No data is sent to external servers. Every interaction - language, documents, images, audio - is processed on-device.",
   },
   {
     q: "What platforms does Noor OS support?",
@@ -27,7 +27,7 @@ const faqs = [
   },
   {
     q: "Does Noor OS support Arabic?",
-    a: "Arabic is a first-class language in Noor OS — not an afterthought. The system supports Arabic AI conversations, Arabic OCR, RTL interfaces, Arabic document analysis, and full Arabic commands via the AI Bar.",
+    a: "Arabic is a first-class language in Noor OS - not an afterthought. The system supports Arabic AI conversations, Arabic OCR, RTL interfaces, Arabic document analysis, and full Arabic commands via the AI Bar.",
   },
   {
     q: "What AI models power Noor OS?",
@@ -35,16 +35,20 @@ const faqs = [
   },
   {
     q: "Is Noor OS the same as a Linux desktop with an AI assistant?",
-    a: "No. Noor OS is a new computing paradigm. A Linux desktop with an AI assistant bolt-on still forces humans to navigate the traditional OS. Noor OS makes AI the primary interface — the entire system is designed around intent-driven interaction from the ground up.",
+    a: "No. Noor OS is a new computing paradigm. A Linux desktop with an AI assistant bolt-on still forces humans to navigate the traditional OS. Noor OS makes AI the primary interface - the entire system is designed around intent-driven interaction from the ground up.",
   },
 ];
 
 export default function FAQSection() {
-  const [open, setOpen] = useState<number | null>(0);
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
+
+  const toggle = (i: number) => {
+    setOpenIndex((prev) => (prev === i ? null : i));
+  };
 
   return (
     <section id="faq" className="relative py-32 overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_50%_50%,rgba(0,40,100,0.08),transparent)]" />
+      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_60%_40%_at_50%_50%,rgba(0,40,100,0.08),transparent)]" />
 
       <div className="max-w-3xl mx-auto px-6">
         <div className="text-center mb-14">
@@ -61,43 +65,49 @@ export default function FAQSection() {
         </div>
 
         <div className="space-y-3">
-          {faqs.map(({ q, a }, i) => (
-            <FadeIn key={q} delay={0.05 * i}>
-              <div className="rounded-2xl border border-[rgba(0,200,255,0.1)] overflow-hidden">
-                <button
-                  onClick={() => setOpen(open === i ? null : i)}
-                  className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left bg-[rgba(10,22,40,0.5)] hover:bg-[rgba(10,22,40,0.8)] transition-colors"
-                  aria-expanded={open === i}
-                >
-                  <span className="text-white font-medium text-sm sm:text-base leading-snug">{q}</span>
-                  <motion.span
-                    animate={{ rotate: open === i ? 45 : 0 }}
-                    transition={{ duration: 0.2 }}
-                    className="text-[#00c8ff] text-xl flex-shrink-0 font-light"
+          {faqs.map(({ q, a }, i) => {
+            const isOpen = openIndex === i;
+            return (
+              <FadeIn key={q} delay={0.05 * i}>
+                <div className="rounded-2xl border border-[rgba(0,200,255,0.1)] overflow-hidden">
+                  <button
+                    type="button"
+                    onClick={() => toggle(i)}
+                    className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left bg-[rgba(10,22,40,0.5)] hover:bg-[rgba(10,22,40,0.8)] transition-colors duration-200"
+                    aria-expanded={isOpen}
                   >
-                    +
-                  </motion.span>
-                </button>
-
-                <AnimatePresence initial={false}>
-                  {open === i && (
-                    <motion.div
-                      key="content"
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                      className="overflow-hidden"
+                    <span className="text-white font-medium text-sm sm:text-base leading-snug">
+                      {q}
+                    </span>
+                    <motion.span
+                      animate={{ rotate: isOpen ? 45 : 0 }}
+                      transition={{ duration: 0.2, ease: "easeInOut" }}
+                      className="text-[#00c8ff] text-xl flex-shrink-0 font-light select-none leading-none"
                     >
-                      <p className="px-6 pb-5 text-[#6b8fb5] text-sm sm:text-base leading-relaxed border-t border-[rgba(0,200,255,0.06)] pt-4">
-                        {a}
-                      </p>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            </FadeIn>
-          ))}
+                      +
+                    </motion.span>
+                  </button>
+
+                  <AnimatePresence initial={false}>
+                    {isOpen && (
+                      <motion.div
+                        key="body"
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
+                        style={{ overflow: "hidden" }}
+                      >
+                        <p className="px-6 pb-5 pt-4 text-[#6b8fb5] text-sm sm:text-base leading-relaxed border-t border-[rgba(0,200,255,0.06)]">
+                          {a}
+                        </p>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              </FadeIn>
+            );
+          })}
         </div>
       </div>
     </section>

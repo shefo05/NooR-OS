@@ -1,11 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
+import LightboxImage from "@/components/ui/lightbox-image";
 import FadeIn from "./FadeIn";
 
 const capabilities = [
-  { icon: "🔤", title: "Visual OCR", desc: "Extract text from any image, screenshot, or scan — even handwritten notes." },
+  { icon: "🔤", title: "Visual OCR", desc: "Extract text from any image, screenshot, or scan  even handwritten notes." },
   { icon: "🎯", title: "Object Recognition", desc: "Identify objects, people, and scenes in any image using local AI." },
   { icon: "🧠", title: "Scene Understanding", desc: "Ask questions about what's in an image in plain language." },
   { icon: "💬", title: "Visual Q&A", desc: "Point at anything on screen. Noor Vision explains it instantly." },
@@ -14,16 +14,16 @@ const capabilities = [
 export default function VisionSection() {
   return (
     <section id="vision" className="relative py-32 overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_20%_50%,rgba(0,50,120,0.1),transparent)]" />
+      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_60%_40%_at_20%_50%,rgba(0,50,120,0.1),transparent)]" />
 
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Screenshot */}
           <FadeIn direction="left">
             <div className="screen-frame gradient-fade-bottom">
-              <Image
+              <LightboxImage
                 src="/screenshots/vision/ss13-architecture.png"
-                alt="Noor Vision — AI image understanding"
+                alt="Noor Vision  AI image understanding"
                 width={1200}
                 height={800}
                 className="w-full h-auto"
@@ -47,7 +47,7 @@ export default function VisionSection() {
               <p className="text-[#6b8fb5] text-lg leading-relaxed mb-10">
                 See a screenshot, a diagram, a photo, a PDF scan.
                 Point at it. Ask Noor Vision what it means.
-                Get an answer — without uploading anything to the cloud.
+                Get an answer  without uploading anything to the cloud.
               </p>
             </FadeIn>
 

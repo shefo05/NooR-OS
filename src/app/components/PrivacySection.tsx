@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
+import LightboxImage from "@/components/ui/lightbox-image";
 import FadeIn from "./FadeIn";
 
 const shields = [
@@ -16,7 +16,7 @@ const shields = [
 export default function PrivacySection() {
   return (
     <section id="privacy" className="relative py-32 overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_50%_50%,rgba(0,40,100,0.15),transparent)]" />
+      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_60%_60%_at_50%_50%,rgba(0,40,100,0.15),transparent)]" />
 
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
@@ -43,7 +43,7 @@ export default function PrivacySection() {
           <div>
             <FadeIn delay={0.1} direction="left">
               <div className="screen-frame mb-6">
-                <Image
+                <LightboxImage
                   src="/screenshots/privacy/ss26-privacy-shield.png"
                   alt="Noor Privacy Shield"
                   width={900}
@@ -54,7 +54,7 @@ export default function PrivacySection() {
             </FadeIn>
             <FadeIn delay={0.25} direction="left">
               <div className="screen-frame">
-                <Image
+                <LightboxImage
                   src="/screenshots/privacy/ss11-ai-providers.png"
                   alt="Noor AI Providers privacy settings"
                   width={900}
@@ -108,7 +108,7 @@ export default function PrivacySection() {
         {/* Chat screenshot */}
         <FadeIn delay={0.2} className="mt-12">
           <div className="screen-frame">
-            <Image
+            <LightboxImage
               src="/screenshots/privacy/ss31-noor-chat.png"
               alt="Noor private chat"
               width={1600}

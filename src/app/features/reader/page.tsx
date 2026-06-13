@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
+import LightboxImage from "@/components/ui/lightbox-image";
 
 export const metadata: Metadata = {
-  title: "Noor Reader — AI PDF & Document Intelligence",
+  title: "Noor Reader  AI PDF & Document Intelligence",
   description:
-    "Noor Reader is an AI-powered PDF workspace. Ask questions about documents, get summaries, extract knowledge, run OCR, and create quizzes — all locally with no cloud upload.",
+    "Noor Reader is an AI-powered PDF workspace. Ask questions about documents, get summaries, extract knowledge, run OCR, and create quizzes  all locally with no cloud upload.",
   keywords: [
     "AI PDF reader",
     "AI document analysis",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "https://noor-os.com/features/reader" },
   openGraph: {
-    title: "Noor Reader — AI PDF & Document Intelligence",
+    title: "Noor Reader  AI PDF & Document Intelligence",
     description: "Have a conversation with your documents. Locally. Privately.",
     url: "https://noor-os.com/features/reader",
   },
@@ -58,7 +58,7 @@ export default function ReaderPage() {
             <p className="text-[#6b8fb5] text-xl leading-relaxed max-w-2xl">
               Open any PDF in Noor Reader and have a conversation with it.
               Ask questions, get instant summaries, extract specific information,
-              create quizzes — entirely on your device, with no cloud upload.
+              create quizzes  entirely on your device, with no cloud upload.
             </p>
           </header>
 
@@ -73,7 +73,7 @@ export default function ReaderPage() {
             <p className="text-[#6b8fb5] leading-relaxed">
               Unlike cloud-based PDF AI tools, Noor Reader processes all documents using local AI models.
               No document content is transmitted to external servers. This makes it suitable for sensitive
-              documents — legal, medical, financial, academic, and governmental files — where privacy is non-negotiable.
+              documents  legal, medical, financial, academic, and governmental files  where privacy is non-negotiable.
             </p>
           </section>
 
@@ -89,7 +89,7 @@ export default function ReaderPage() {
               ].map(({ src, label }) => (
                 <div key={label} className="flex flex-col gap-2">
                   <div className="screen-frame">
-                    <Image src={src} alt={`Noor Reader — ${label}`} width={600} height={400} className="w-full h-auto" />
+                    <LightboxImage src={src} alt={`Noor Reader  ${label}`} width={600} height={400} className="w-full h-auto" />
                   </div>
                   <p className="text-[#6b8fb5] text-xs text-center">{label}</p>
                 </div>

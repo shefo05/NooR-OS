@@ -63,11 +63,11 @@ const metrics = [
 export default function MetricsSection() {
   return (
     <section className="relative py-24 overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_50%,rgba(0,60,140,0.1),transparent)]" />
+      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_80%_60%_at_50%_50%,rgba(0,60,140,0.1),transparent)]" />
 
       {/* Horizontal rule lines */}
       <div
-        className="absolute inset-0 opacity-[0.03]"
+        className="absolute inset-0 opacity-[0.03] pointer-events-none"
         style={{
           backgroundImage: `repeating-linear-gradient(0deg, rgba(0,200,255,0.5) 0px, rgba(0,200,255,0.5) 1px, transparent 1px, transparent 60px)`,
         }}

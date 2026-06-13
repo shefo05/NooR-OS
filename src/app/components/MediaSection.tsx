@@ -1,13 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
+import LightboxImage from "@/components/ui/lightbox-image";
 import FadeIn from "./FadeIn";
 
 export default function MediaSection() {
   return (
     <section className="relative py-32 overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_30%_50%,rgba(0,60,140,0.12),transparent)]" />
+      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_70%_50%_at_30%_50%,rgba(0,60,140,0.12),transparent)]" />
 
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -16,16 +16,16 @@ export default function MediaSection() {
             <FadeIn delay={0.1} direction="left">
               <div className="grid grid-cols-2 gap-4">
                 <div className="screen-frame col-span-2">
-                  <Image
-                    src="/screenshots/media/ss18-light-wave.png"
-                    alt="Noor audio waveform light"
+                  <LightboxImage
+                    src="/screenshots/media/ss19-dark-wave.png"
+                    alt="Noor dark audio waveform"
                     width={900}
                     height={550}
                     className="w-full h-auto"
                   />
                 </div>
                 <div className="screen-frame">
-                  <Image
+                  <LightboxImage
                     src="/screenshots/media/ss21-transcript.png"
                     alt="Noor transcript"
                     width={450}
@@ -34,7 +34,7 @@ export default function MediaSection() {
                   />
                 </div>
                 <div className="screen-frame">
-                  <Image
+                  <LightboxImage
                     src="/screenshots/media/ss23-chat.png"
                     alt="Noor media chat"
                     width={450}
@@ -90,19 +90,6 @@ export default function MediaSection() {
             </div>
           </div>
         </div>
-
-        {/* Dark waveform showcase */}
-        <FadeIn delay={0.2} className="mt-16">
-          <div className="screen-frame">
-            <Image
-              src="/screenshots/media/ss19-dark-wave.png"
-              alt="Noor dark audio waveform"
-              width={1600}
-              height={900}
-              className="w-full h-auto"
-            />
-          </div>
-        </FadeIn>
       </div>
     </section>
   );

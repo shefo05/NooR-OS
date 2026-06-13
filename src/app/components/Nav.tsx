@@ -116,7 +116,7 @@ export default function Nav() {
             key="mobile-menu"
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
+            exit={{ opacity: 0, y: -8, pointerEvents: "none" }}
             transition={{ duration: 0.2 }}
             className="fixed inset-0 z-40 flex flex-col md:hidden"
             style={{ background: "rgba(5,13,26,0.97)", backdropFilter: "blur(16px)" }}

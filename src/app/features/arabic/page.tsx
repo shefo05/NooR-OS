@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
+import LightboxImage from "@/components/ui/lightbox-image";
 
 export const metadata: Metadata = {
-  title: "Arabic First — Native Arabic AI Operating System",
+  title: "Arabic First  Native Arabic AI Operating System",
   description:
     "Noor OS is the first AI operating system with native Arabic language support. Arabic AI conversations, Arabic OCR, RTL interfaces, and full Arabic command support built from the ground up.",
   keywords: [
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "https://noor-os.com/features/arabic" },
   openGraph: {
-    title: "Noor OS Arabic First — Native Arabic AI Computing",
+    title: "Noor OS Arabic First  Native Arabic AI Computing",
     description: "The first AI operating system built for Arabic speakers from the ground up.",
     url: "https://noor-os.com/features/arabic",
   },
@@ -57,23 +57,23 @@ export default function ArabicPage() {
               <span className="text-[#00c8ff]">from day one.</span>
             </h1>
             <p className="text-3xl font-bold text-[rgba(0,200,255,0.4)] mb-6" dir="rtl">
-              نور — الذكاء الاصطناعي بالعربية
+              نور  الذكاء الاصطناعي بالعربية
             </p>
             <p className="text-[#6b8fb5] text-xl leading-relaxed max-w-2xl">
               Arabic is not a localization in Noor OS. It is a first-class language.
-              Every module — AI Bar, Reader, Vision, Media — supports Arabic natively.
+              Every module  AI Bar, Reader, Vision, Media  supports Arabic natively.
               The only AI operating system designed with Arabic heritage.
             </p>
           </header>
 
           <div className="screen-frame mb-16">
-            <Image src="/screenshots/arabic/ss32-chat-arabic.png" alt="Noor OS Arabic — native Arabic AI conversation interface" width={1200} height={700} className="w-full h-auto" priority />
+            <LightboxImage src="/screenshots/arabic/ss32-chat-arabic.png" alt="Noor OS Arabic  native Arabic AI conversation interface" width={1200} height={700} className="w-full h-auto" priority />
           </div>
 
           <section className="mb-16 p-8 rounded-2xl border border-[rgba(0,200,255,0.12)] bg-[rgba(0,200,255,0.03)]">
             <h2 className="text-2xl font-bold text-white mb-4">Arabic as a first-class language</h2>
             <p className="text-[#6b8fb5] leading-relaxed mb-4">
-              Most operating systems and AI tools treat Arabic as an afterthought — a language pack
+              Most operating systems and AI tools treat Arabic as an afterthought  a language pack
               added after the core product is built. This results in poor RTL support, broken layouts,
               inaccurate OCR, and AI models that struggle with Arabic nuance.
             </p>
@@ -81,7 +81,7 @@ export default function ArabicPage() {
               <strong className="text-white">Noor OS was designed with Arabic from the start.</strong> The AI models
               are selected and tuned for Arabic performance. Interfaces adapt natively to RTL. OCR handles
               Arabic script with high fidelity. Voice recognition understands Arabic accents.
-              This is not a translation — it is a native Arabic computing experience.
+              This is not a translation  it is a native Arabic computing experience.
             </p>
           </section>
 
@@ -96,7 +96,7 @@ export default function ArabicPage() {
               ].map(({ src, label }) => (
                 <div key={label} className="flex flex-col gap-2">
                   <div className="screen-frame">
-                    <Image src={src} alt={`Noor OS Arabic — ${label}`} width={800} height={500} className="w-full h-auto" />
+                    <LightboxImage src={src} alt={`Noor OS Arabic  ${label}`} width={800} height={500} className="w-full h-auto" />
                   </div>
                   <p className="text-[#6b8fb5] text-xs">{label}</p>
                 </div>

@@ -26,7 +26,7 @@ const infoCards = [
   {
     icon: <MessageSquare className="w-5 h-5" />,
     title: "Direct Reply",
-    description: "Our team replies directly to your email — no account needed.",
+    description: "Our team replies directly to your email  no account needed.",
   },
   {
     icon: <Shield className="w-5 h-5" />,
@@ -36,7 +36,7 @@ const infoCards = [
   {
     icon: <Zap className="w-5 h-5" />,
     title: "All Topics Covered",
-    description: "Technical issues, feature ideas, partnerships — we handle it all.",
+    description: "Technical issues, feature ideas, partnerships  we handle it all.",
   },
 ];
 
@@ -62,7 +62,7 @@ export default function SupportPage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
 
-            {/* Left column — info */}
+            {/* Left column  info */}
             <aside className="lg:col-span-1 space-y-4">
               <div
                 className="p-6 rounded-2xl mb-2"
@@ -80,7 +80,7 @@ export default function SupportPage() {
               ))}
             </aside>
 
-            {/* Right column — form */}
+            {/* Right column  form */}
             <section className="lg:col-span-2">
               <div
                 className="rounded-2xl p-8"
