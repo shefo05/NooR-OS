@@ -25,12 +25,12 @@ interface FieldErrors {
   message?: string[];
 }
 
-const inputBase =
+const inputStyle =
   "w-full rounded-xl px-4 py-3 text-sm text-white placeholder-[#4a6b8a] outline-none transition-colors duration-200 focus:border-[#00c8ff]";
-const inputStyle = `${inputBase}`;
 
 export default function SupportForm() {
   const [submitted, setSubmitted] = useState(false);
+  const [submittedEmail, setSubmittedEmail] = useState("");
   const [loading, setLoading] = useState(false);
   const [globalError, setGlobalError] = useState<string | null>(null);
   const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
@@ -42,7 +42,7 @@ export default function SupportForm() {
   const [priority, setPriority] = useState<SupportPriority | "">("");
   const [message, setMessage] = useState("");
 
-  async function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: { preventDefault(): void }) {
     e.preventDefault();
     setGlobalError(null);
     setFieldErrors({});
@@ -67,6 +67,7 @@ export default function SupportForm() {
         return;
       }
 
+      setSubmittedEmail(email);
       setSubmitted(true);
     } catch {
       setGlobalError("Network error. Please check your connection and try again.");
@@ -77,6 +78,7 @@ export default function SupportForm() {
 
   function handleReset() {
     setSubmitted(false);
+    setSubmittedEmail("");
     setName("");
     setEmail("");
     setSubject("");
@@ -87,7 +89,7 @@ export default function SupportForm() {
     setFieldErrors({});
   }
 
-  if (submitted) return <SupportSuccess onReset={handleReset} />;
+  if (submitted) return <SupportSuccess userEmail={submittedEmail} onReset={handleReset} />;
 
   return (
     <form onSubmit={handleSubmit} noValidate className="space-y-5">
@@ -110,9 +112,7 @@ export default function SupportForm() {
             }}
             autoComplete="name"
           />
-          {fieldErrors.name && (
-            <FieldError msg={fieldErrors.name[0]} />
-          )}
+          {fieldErrors.name && <FieldError msg={fieldErrors.name[0]} />}
         </div>
 
         <div>
@@ -131,9 +131,7 @@ export default function SupportForm() {
             }}
             autoComplete="email"
           />
-          {fieldErrors.email && (
-            <FieldError msg={fieldErrors.email[0]} />
-          )}
+          {fieldErrors.email && <FieldError msg={fieldErrors.email[0]} />}
         </div>
       </div>
 
@@ -153,9 +151,7 @@ export default function SupportForm() {
             border: `1px solid ${fieldErrors.subject ? "#ef4444" : "rgba(0,200,255,0.12)"}`,
           }}
         />
-        {fieldErrors.subject && (
-          <FieldError msg={fieldErrors.subject[0]} />
-        )}
+        {fieldErrors.subject && <FieldError msg={fieldErrors.subject[0]} />}
       </div>
 
       {/* Category + Priority */}
@@ -181,9 +177,7 @@ export default function SupportForm() {
             </select>
             <ChevronDown />
           </div>
-          {fieldErrors.category && (
-            <FieldError msg={fieldErrors.category[0]} />
-          )}
+          {fieldErrors.category && <FieldError msg={fieldErrors.category[0]} />}
         </div>
 
         <div>
@@ -207,9 +201,7 @@ export default function SupportForm() {
             </select>
             <ChevronDown />
           </div>
-          {fieldErrors.priority && (
-            <FieldError msg={fieldErrors.priority[0]} />
-          )}
+          {fieldErrors.priority && <FieldError msg={fieldErrors.priority[0]} />}
         </div>
       </div>
 
@@ -230,9 +222,7 @@ export default function SupportForm() {
           }}
         />
         <div className="flex justify-between items-center mt-1">
-          {fieldErrors.message
-            ? <FieldError msg={fieldErrors.message[0]} />
-            : <span />}
+          {fieldErrors.message ? <FieldError msg={fieldErrors.message[0]} /> : <span />}
           <span className={`text-xs ${message.length > 4500 ? "text-amber-400" : "text-[#4a6b8a]"}`}>
             {message.length}/5000
           </span>
@@ -241,8 +231,10 @@ export default function SupportForm() {
 
       {/* Global error */}
       {globalError && (
-        <div className="flex items-center gap-3 px-4 py-3 rounded-xl"
-          style={{ background: "rgba(239,68,68,0.08)", border: "1px solid rgba(239,68,68,0.25)" }}>
+        <div
+          className="flex items-center gap-3 px-4 py-3 rounded-xl"
+          style={{ background: "rgba(239,68,68,0.08)", border: "1px solid rgba(239,68,68,0.25)" }}
+        >
           <AlertCircle className="w-4 h-4 text-red-400 shrink-0" />
           <p className="text-sm text-red-400">{globalError}</p>
         </div>
@@ -284,7 +276,7 @@ function ChevronDown() {
   return (
     <div className="pointer-events-none absolute inset-y-0 right-3 flex items-center">
       <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M2 4L6 8L10 4" stroke="#6b8fb5" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M2 4L6 8L10 4" stroke="#6b8fb5" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     </div>
   );

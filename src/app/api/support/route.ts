@@ -4,7 +4,7 @@ import { sendSupportTicket } from "@/services/email.service";
 
 const schema = z.object({
   name: z.string().min(1, "Name is required").max(100),
-  email: z.string().email("Valid email is required"),
+  email: z.email("Valid email is required"),
   subject: z.string().min(1, "Subject is required").max(200),
   category: z.enum([
     "General Inquiry",
@@ -17,6 +17,17 @@ const schema = z.object({
   priority: z.enum(["Low", "Medium", "High"]),
   message: z.string().min(10, "Message must be at least 10 characters").max(5000),
 });
+
+type FieldErrors = Partial<Record<string, string[]>>;
+
+function toFieldErrors(issues: z.core.$ZodIssue[]): FieldErrors {
+  const errors: FieldErrors = {};
+  for (const issue of issues) {
+    const key = String(issue.path[0] ?? "_");
+    (errors[key] ??= []).push(issue.message);
+  }
+  return errors;
+}
 
 // In-memory rate limiting: IP → { count, resetAt }
 const rateLimitMap = new Map<string, { count: number; resetAt: number }>();
@@ -68,9 +79,8 @@ export async function POST(req: NextRequest) {
 
   const parsed = schema.safeParse(body);
   if (!parsed.success) {
-    const errors = parsed.error.flatten().fieldErrors;
     return NextResponse.json(
-      { success: false, message: "Validation failed.", errors },
+      { success: false, message: "Validation failed.", errors: toFieldErrors(parsed.error.issues) },
       { status: 422 }
     );
   }
@@ -83,7 +93,7 @@ export async function POST(req: NextRequest) {
     });
 
     return NextResponse.json(
-      { success: true, message: "Your support request has been received. We will contact you soon." },
+      { success: true, message: "Support request sent successfully." },
       { status: 200 }
     );
   } catch (error) {
