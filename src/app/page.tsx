@@ -13,6 +13,7 @@ import MetricsSection from "./components/MetricsSection";
 import ArabicSection from "./components/ArabicSection";
 import MobileSection from "./components/MobileSection";
 import RoadmapSection from "./components/RoadmapSection";
+import FAQSection from "./components/FAQSection";
 import CTASection from "./components/CTASection";
 import Footer from "./components/Footer";
 import SectionDivider from "./components/SectionDivider";
@@ -47,6 +48,8 @@ export default function Home() {
       <MobileSection />
       <SectionDivider />
       <RoadmapSection />
+      <SectionDivider />
+      <FAQSection />
       <CTASection />
       <Footer />
     </>
